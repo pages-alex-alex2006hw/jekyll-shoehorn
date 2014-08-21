@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 					style: "compressed"
 				},
 				files: {
-					"css/global-unprefixed.css": "_sass/screen.scss"
+					"css/screen-unprefixed.css": "_sass/screen.scss"
 				}
 			}
 		},
