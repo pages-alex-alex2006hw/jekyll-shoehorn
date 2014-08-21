@@ -10,15 +10,15 @@ module.exports = function(grunt) {
 					style: "compressed"
 				},
 				files: {
-					"css/global-unprefixed.css": "_sass/global.scss"
+					"css/global-unprefixed.css": "_sass/screen.scss"
 				}
 			}
 		},
 
 		autoprefixer: {
 			global: {
-				src: "css/global-unprefixed.css",
-				dest: "css/global.css"
+				src: "css/screen-unprefixed.css",
+				dest: "css/screen.css"
 			}
 		},
 
