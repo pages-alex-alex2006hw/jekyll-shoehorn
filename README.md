@@ -11,5 +11,5 @@ Basic shoehorn for a Jekyll based site with 5 basic Grunt tasks:
 6. [**Contrib-sass**](https://github.com/gruntjs/grunt-contrib-sass "Contrib SASS") - Compiling our SCSS code to a CSS file. 
 7. [**Contrib-watch**](https://github.com/gruntjs/grunt-contrib-watch "Contrib watch") - Watches all of our Grunt tasks and runs them on any change in the project 
 
-
+For posting and editing content we recommend using [prose.io](http://prose.io/ "Prose").
 
