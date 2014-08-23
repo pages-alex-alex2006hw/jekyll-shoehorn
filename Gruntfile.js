@@ -4,23 +4,13 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		sass: {
-			global: {
-				options: {
-					style: "compressed"
-				},
-				files: {
-					"css/screen-unprefixed.css": "_sass/screen.scss"
-				}
-			}
-		},
 
-		autoprefixer: {
-			global: {
-				src: "css/screen-unprefixed.css",
-				dest: "css/screen.css"
-			}
-		},
+//		autoprefixer: {
+//			global: {
+//				src: "style/css/screen-unprefixed.css",
+//				dest: "style/css/screen.css"
+//			}
+//		},
 
 		shell: {
 			jekyllServe: {
@@ -41,7 +31,8 @@ module.exports = function(grunt) {
 					"_layouts/*.html",
 					"_posts/*.html",
 					"_posts/*.md",
-					"_includes/*.html"
+					"_includes/*.html",
+					"style/css/*.css"
 				],
 				tasks: ["shell:jekyllBuild"]
 			},
@@ -50,11 +41,11 @@ module.exports = function(grunt) {
 				tasks: ["sass", "autoprefixer", "shell:jekyllBuild"]
 			},
 			svg: {
-				files: ["svg/*.svg"],
+				files: ["style/symbols/*.svg"],
 				tasks: ["svgstore", "shell:jekyllBuild"]
 			},
 			src: {
-				files: ['lib/*.js', 'css/**/*.scss', '!lib/dontwatch.js'],
+				files: ['lib/*.js', 'style/**/*.scss', '!lib/dontwatch.js'],
 				tasks: ['default']
 			}
 		},
@@ -69,7 +60,7 @@ module.exports = function(grunt) {
 			},
 			default: {
 				files: {
-					"_includes/svg-defs.svg": ["svg/*.svg"]
+					"_includes/svg-defs.svg": ["style/symbols/*.svg"]
 				}
 			}
 
@@ -89,8 +80,8 @@ module.exports = function(grunt) {
 
 	grunt.registerTask("default",
 		[
-			"sass",
-			"autoprefixer",
+//			"sass",
+//			"autoprefixer",
 			"svgstore",
 			"shell:jekyllBuild",
 			"watch"
